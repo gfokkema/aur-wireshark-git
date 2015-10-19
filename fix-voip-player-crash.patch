@@ -1,0 +1,14 @@
+diff --git a/ui/voip_calls.c b/ui/voip_calls.c
+index a673fde..8f85f96 100644
+--- a/ui/voip_calls.c
++++ b/ui/voip_calls.c
+@@ -433,7 +433,8 @@ static void insert_to_graph_t38(voip_calls_tapinfo_t *tapinfo, packet_info *pinf
+     gchar     time_str[COL_MAX_LEN];
+ 
+     new_gai = (seq_analysis_item_t *)g_malloc0(sizeof(seq_analysis_item_t));
+-    new_gai->fd = packet_list_get_row_data(frame_num);
++    // Bug tracker: https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=11596
++    new_gai->fd = pinfo->fd; // packet_list_get_row_data(frame_num);
+     COPY_ADDRESS(&(new_gai->src_addr),src_addr);
+     COPY_ADDRESS(&(new_gai->dst_addr),dst_addr);
+ 

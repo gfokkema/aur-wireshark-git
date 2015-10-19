@@ -1,0 +1,13 @@
+diff --git a/configure.ac b/configure.ac
+index f5bef94..01b8c68 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -973,7 +973,7 @@ AC_WIRESHARK_COMPILER_FLAGS_CHECK(-Wunused-const-variable)
+ #
+ # The following are C only, not C++
+ #
+-AC_WIRESHARK_COMPILER_FLAGS_CHECK(-Wc++-compat, C)
++#AC_WIRESHARK_COMPILER_FLAGS_CHECK(-Wc++-compat, C)
+ AC_WIRESHARK_COMPILER_FLAGS_CHECK(-Wdeclaration-after-statement, C)
+ 
+ #
