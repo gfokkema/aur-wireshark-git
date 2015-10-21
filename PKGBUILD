@@ -20,7 +20,6 @@ sha1sums=('SKIP'
 
 prepare() {
   cd ${pkgbase}
-  sed -i 's/$(AM_V_RCC)rcc/&-qt4/p' ui/qt/Makefile.am
   patch -Np1 -i ../disable-c++-compat.patch
   patch -Np1 -i ../fix-voip-player-crash.patch
 }
